@@ -7,7 +7,7 @@
         <meta name="author" content="" />
         <title>Coding with Jacob</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="assets/cwj.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Simple line icons-->
@@ -22,12 +22,11 @@
         <a class="menu-toggle rounded" href="#"><i class="fas fa-bars"></i></a>
         <nav id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <li class="sidebar-brand"><a href="#page-top">Overview</a></li>
                 <li class="sidebar-nav-item"><a href="#page-top">Start</a></li>
                 <li class="sidebar-nav-item"><a href="#Platforms">Platforms</a></li>
                 <li class="sidebar-nav-item"><a href="#Future Projects">Future Projects</a></li>
                 <li class="sidebar-nav-item"><a href="#Current Projects">Current Projects</a></li>
-                <li class="sidebar-nav-item"><a href="#contact">Office location</a></li>
+                <li class="sidebar-nav-item"><a href="#contact">Location</a></li>
             </ul>
         </nav>
         <!-- Header-->
@@ -38,25 +37,48 @@
             </div>
         </header>
         <!-- About-->
+        <?php
+            if(isset($_POST['submit']))
+            {
+                $email = $_POST["email"];
+                shell_exec("python send_mail.py $email");
+                echo 
+                "<section id='email-alert'>
+                    <div class='alert alert-success'>
+                        You've signed up for a one time news letter with $email
+                    </div>
+                </section>";
+            }
+        ?>
         <section class="content-section bg-info" id="Platforms">
-            <div class="container px-4 px-lg-5 text-center">
+            <div class="container px-1 px-lg-1 text-center">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-5">
                         <div class="row gx-4 gx-lg-3">
                             <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
                             </div>
                             <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-                                <span class="service-icon rounded-circle mx-auto mb-3"><a href="https://github.com/Jacob-OTW" style="text-decoration:none;" class="service-icon rounded-circle mx-auto mb-3"><i class="icon-social-github"></i></a></span>
+                                <span class="service-icon rounded-circle mx-auto mb-3"><a target="_blank" href="https://github.com/Jacob-OTW" style="text-decoration:none;" class="service-icon rounded-circle mx-auto mb-3"><i class="icon-social-github"></i></a></span>
                                 <h4><strong>GitHub</strong></h4>
                             </div>
                             <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
-                                <span class="service-icon rounded-circle mx-auto mb-3"><a href="https://www.youtube.com/channel/UChJXOG-3ifrnvXxHaQujv7g" style="text-decoration:none;" class="service-icon rounded-circle mx-auto mb-3"><i class="icon-social-youtube"></i></a></span>
+                                <span class="service-icon rounded-circle mx-auto mb-3"><a target="_blank" href="https://www.youtube.com/channel/UChJXOG-3ifrnvXxHaQujv7g" style="text-decoration:none;" class="service-icon rounded-circle mx-auto mb-3"><i class="icon-social-youtube"></i></a></span>
                                 <h4><strong>YouTube</strong></h4>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        <br>
+    <div class="container">
+        <div class="text-center">
+            <form method="POST" action="#email-alert" >
+                <label for="phone"><h1>Sign up for Email</h1></label><br><br>
+                <input class="text" id='GO' name="email" value="Example@email.com">
+                <button type="submit" name="submit" class="btn btn-primary">📧</button>
+            </form>
+        </div>
+    </div>
         </section>
         <!-- Services-->
         <section class="content-section bg-primary text-white text-center" id="Future Projects">
@@ -109,20 +131,6 @@
                 </div>
             </div>
         </section>
-        <!-- Callout-->
-        <!--
-            <section class="callout">
-            <div class="container px-4 px-lg-5 text-center">
-                <h2 class="mx-auto mb-5">
-                    Welcome to
-                    <em>your</em>
-                    next website!
-                </h2>
-                <a class="btn btn-primary btn-xl" href="https://startbootstrap.com/theme/stylish-portfolio/">Download Now!</a>
-            </div>
-        </section>
-        -->
-        <!-- Portfolio-->
         <section class="content-section" id="Current Projects">
             <div class="container px-4 px-lg-5">
                 <div class="content-section-heading text-center">
