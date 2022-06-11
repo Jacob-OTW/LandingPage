@@ -42,7 +42,7 @@
             {
                 $email = $_POST["email"];
                 shell_exec("python send_mail.py $email");
-                echo 
+                echo
                 "<section id='email-alert'>
                     <div class='alert alert-success'>
                         You've signed up for a one time news letter with $email
@@ -50,7 +50,7 @@
                 </section>";
             }
         ?>
-        <section class="content-section bg-info" id="Platforms">
+        <section class="content-section py-5 bg-info" id="Platforms">
             <div class="container px-1 px-lg-1 text-center">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-5">
@@ -74,14 +74,14 @@
         <div class="text-center">
             <form method="POST" action="#email-alert" >
                 <label for="phone"><h1>Sign up for Email</h1></label><br><br>
-                <input class="text" id='GO' name="email" value="Example@email.com">
+                <input class="text" id='GO' name="email" placeholder="Example@email.com">
                 <button type="submit" name="submit" class="btn btn-primary">📧</button>
             </form>
         </div>
     </div>
         </section>
         <!-- Services-->
-        <section class="content-section bg-primary text-white text-center" id="Future Projects">
+        <section class="content-section py-5 bg-primary text-white text-center" id="Future Projects">
             <div class="container px-4 px-lg-5">
                 <div class="content-section-heading">
                     <h3 class="text-secondary mb-0">Roadmap</h3>
@@ -131,7 +131,7 @@
                 </div>
             </div>
         </section>
-        <section class="content-section" id="Current Projects">
+        <section class="content-section py-5" id="Current Projects">
             <div class="container px-4 px-lg-5">
                 <div class="content-section-heading text-center">
                     <h3 class="text-secondary mb-0">Portfolio</h3>
